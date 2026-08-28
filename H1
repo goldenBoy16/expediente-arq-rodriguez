@@ -1,0 +1,14 @@
+Actores:
+principales
+administrador -> la persona que tiene la funcion de controlar y administrar la tienda en un ambito general.
+    registrar productos y categorias
+    modificar precios
+    ajustar stock
+    consultar reportes 
+vendedor -> la persona encargada de realiza las ventas, interactuar con los clientes.
+    registrar ventas
+    buscar productos
+cliente -> la persona que realiza las compras y quiza clave para la transaccion ya que sin cliente no hay venta.
+    realizar compras
+    consultar productos disponibles
+ 
