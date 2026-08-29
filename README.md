@@ -11,10 +11,19 @@ administrador(realiza el control y administración general del sistema).
 vendedor(realiza las ventas y también interactúa con los clientes).
 cliente(realiza las compras y actor importante en la transacción).
 
-inventario de módulos con la responsabilidad de cada uno:
+Inventario de módulos con la responsabilidad de cada uno:
 modulo de gestión de productos(responsabilidad de gestionar el catalogo de productos como creación de nuevos productos, actualización de precios, control de stock).
 modulo de ventas(registrar ventas).
-modulo de usuarios y autenticación(responsabilidad de controlar ).
+modulo de usuarios y autenticación(responsabilidad de controlar el acceso al sistema mediante la autenticación de usuarios).
+modulo de clientes(responsabilidad de mantener el historial de clientes y su historial de compras en la tienda).
+
+Primer diagrama de clases con atributos y relaciones:
+se adjuntara imagen.
+
+Dos atributos de calidad críticos:
+
+
+
 
 
 
