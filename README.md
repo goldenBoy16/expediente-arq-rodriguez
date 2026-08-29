@@ -21,6 +21,8 @@ Primer diagrama de clases con atributos y relaciones:
 se adjuntara imagen.
 
 Dos atributos de calidad críticos:
+los atributos que dominan seria, Ideonidad funcional(un sistema que responde a la necesidad de los clientes y los requerimientos del propietario aprovechando los recursos que proporciona los módulos de forma organizada y responsiva). Usabilidad(sistema intuitivo de fácil manejo y sin la necesidad de elaborar archivos o manuales extensos para su uso, elaborado para la comodidad de los usuarios finales).
+los atributos que serian sacrificados seguridad y portabilidad.
 
 
 
