@@ -10,5 +10,5 @@ vendedor -> la persona encargada de realiza las ventas, interactuar con los clie
     buscar productos
 cliente -> la persona que realiza las compras y quiza clave para la transaccion ya que sin cliente no hay venta.
     realizar compras
-    consultar productos disponibles
+    consultar productos disponibles.
  
