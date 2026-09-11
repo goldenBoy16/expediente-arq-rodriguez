@@ -12,10 +12,6 @@ use App\Builders\VentaBuilderGuardian;
 
 $builder = new VentaBuilderGuardian();
 
-echo "========================================\n";
-echo "       PRUEBA CON PATRÓN BUILDER        \n";
-echo "========================================\n\n";
-
 // --- PRUEBA 1: CONSTRUCCIÓN EXITOSA ---
 echo "1. Construcción válida con datos correctos:\n";
 try {
