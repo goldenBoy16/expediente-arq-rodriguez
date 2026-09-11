@@ -11,7 +11,7 @@ class VentaSinAdapter {
     public function cobrar(float $montoEnBs, string $codigoVenta): bool {
         // ACOPLAMIENTO DIRECTO: La venta se encarga de convertir moneda 
         // y de conocer los métodos internos del banco externo
-        $montoUSD = round($montoEnBs / 6.96, 2);
+        $montoUSD = round($montoEnBs / 10.2, 2);
         
         $respuesta = $this->banco->executeTransaction($montoUSD, $codigoVenta);
         
