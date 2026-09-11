@@ -8,6 +8,6 @@ class Producto {
         public float $precio,
         public int $stock,
         public int $stockMinimo,
-        public int $stado
+        public string $estado = 'ACTIVO'
     ) {}
 }

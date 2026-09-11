@@ -2,15 +2,16 @@
 namespace App\Base;
 
 class Venta {
-    public array $items = [];
+    public string $cliente;
+    public array $detalles = [];
     public float $total = 0.0;
 
-    public function agregarProducto(Producto $producto, int $cantidad): void {
-        $this->items[] = [
-            'producto' => $producto,
-            'cantidad' => $cantidad,
-            'subtotal' => $producto->precio * $cantidad
-        ];
-        $this->total += $producto->precio * $cantidad;
+    public function __construct(string $cliente) {
+        $this->cliente = $cliente;
+    }
+
+    public function agregarDetalle(DetalleVenta $detalle): void {
+        $this->detalles[] = $detalle;
+        $this->total += $detalle->subtotal;
     }
 }
