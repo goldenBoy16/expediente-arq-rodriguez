@@ -6,10 +6,6 @@ require_once __DIR__ . '/NotificacionFactory.php';
 
 use App\Factory\NotificacionFactory;
 
-echo "========================================\n";
-echo "       PRUEBA CON PATRÓN FACTORY        \n";
-echo "========================================\n\n";
-
 // 1. Instanciación delegada a la fábrica (Email)
 $notificadorEmail = NotificacionFactory::crear('email');
 $notificadorEmail->enviar("Alerta con Factory: El producto 'Laptop HP' alcanzó el stock mínimo (2 unidades).");
