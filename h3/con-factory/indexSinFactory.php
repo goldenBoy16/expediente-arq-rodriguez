@@ -14,5 +14,5 @@ if ($canal === 'email') {
 }
 
 if ($notificador) {
-    $notificador->enviar("Alerta sin Factory: El producto 'Mouse Logi' alcanzó el stock mínimo.");
+    $notificador->enviar("Alerta sin Factory: El producto 'Mouse Logitech' alcanzó el stock mínimo.");
 }
