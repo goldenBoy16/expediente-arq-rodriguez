@@ -1,10 +1,6 @@
 <?php
 require_once __DIR__ . '/VentaSinBuilder.php';
 
-echo "========================================\n";
-echo "       PRUEBA SIN PATRÓN BUILDER        \n";
-echo "========================================\n\n";
-
 // Creación directa sin pasar por el guardián de reglas
 $ventaDirecta = \App\Builder\VentaSinBuilder::crearVentaDirecta(""); // Cliente vacío permitido por error
 
