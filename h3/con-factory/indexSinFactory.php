@@ -3,7 +3,7 @@ require_once __DIR__ . '/NotificacionInterface.php';
 require_once __DIR__ . '/EmailNotificacion.php';
 require_once __DIR__ . '/SmsNotificacion.php';
 
-$canal = 'email'; // El código cliente decide manualmente qué clase concreta instanciar
+$canal = 'ticket'; // El código cliente decide manualmente qué clase concreta instanciar
 $notificador = null;
 
 echo "========================================\n";
