@@ -35,4 +35,4 @@ switch ($tipoDescuento) {
 
 $total = $subtotal - $descuento;
 
-echo "[SIN STRATEGY] Tipo: {$tipoDescuento} | Subtotal: Bs. {$subtotal} | Descuento: Bs. {$descuento} | Total: Bs. {$total}\n";
+echo "[CAJA SIN STRATEGY] Tipo: {$tipoDescuento} | Subtotal: Bs. {$subtotal} | Descuento: Bs. {$descuento} | Total: Bs. {$total}\n";

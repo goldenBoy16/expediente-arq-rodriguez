@@ -19,13 +19,17 @@ echo "========================================\n\n";
 
 $prod = new Producto("P-01", "Laptop HP", 1000.00, 10, 2);
 
+echo "PRODUCTO CARGADO:\n";
+echo "- Nombre: " . $prod->nombre . "\n";
+echo "- Precio base: Bs. " . $prod->precio . "\n\n";
+
 // Caso 1: Venta con Estrategia de 10% de Descuento
 $estrategiaPorcentaje = new DescuentoPorcentaje(10);
 $subtotal = 1000.00;
 $descuento1 = $estrategiaPorcentaje->calcularDescuento($subtotal);
-echo "[STRATEGY 10%] Subtotal: Bs. {$subtotal} | Descuento: Bs. {$descuento1} | Total: Bs. " . ($subtotal - $descuento1) . "\n";
+echo "[CAJA CON STRATEGY 10%] Subtotal: Bs. {$subtotal} | Descuento: Bs. {$descuento1} | Total: Bs. " . ($subtotal - $descuento1) . "\n";
 
 // Caso 2: Venta con Estrategia de Descuento Fijo de Bs. 150
 $estrategiaFija = new DescuentoFijo(150.00);
 $descuento2 = $estrategiaFija->calcularDescuento($subtotal);
-echo "[STRATEGY FIJO] Subtotal: Bs. {$subtotal} | Descuento: Bs. {$descuento2} | Total: Bs. " . ($subtotal - $descuento2) . "\n";
+echo "[CAJA CON STRATEGY FIJO] Subtotal: Bs. {$subtotal} | Descuento: Bs. {$descuento2} | Total: Bs. " . ($subtotal - $descuento2) . "\n";
