@@ -33,5 +33,24 @@ class MultaTerceraEdadStrategy implements MultaStrategyInterface {
     }
 }
 
+// Contexto / logica para el calculo de multas
+class CalculadorMultaService {
+    private MultaStrategyInterface $estrategia;
+
+    public function __construct(MultaStrategyInterface $estrategia) {
+        $this->estrategia = $estrategia;
+    }
+
+    public function setEstrategia(MultaStrategyInterface $estrategia): void {
+        $this->estrategia = $estrategia;
+    }
+
+    public function obtenerMonto(int $diasAtraso): float {
+        return $this->estrategia->calcularMulta($diasAtraso);
+    }
+}
+
+
+
 
 
