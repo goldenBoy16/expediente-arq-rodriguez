@@ -1,0 +1,9 @@
+Situación 1: Módulo de Préstamos y Notificaciones de Vencimiento
+Aplicare el patron Observer
+Justificación: Actualmente el módulo de préstamos está acoplado a los receptores (correo, morosidad, recepción), obligando a modificar su código interno cada vez que se agrega un nuevo interesado como el sistema de multas. Con Observer el módulo de préstamos actúa como sujeto emitiendo el evento "préstamo vencido" sin conocer a los consumidores si no se aplica se viola el principio Open/Closed abierto a cambios cerrado a modificaciones y el módulo principal se vuelve frágil a modificaciones permanentes.
+Situación 2: Cálculo de Multas por Día de Atraso
+Aplicare el patron Strategy
+Justificación: La lógica del cálculo de multas está encapsulada en estructuras condicionales if/else y duplicada en los módulos de préstamos y reportes. Con Strategy cada tipo de multa (Infantil, Adulto, Tercera Edad) se convierte en una estrategia independiente bajo una misma interfaz. Si no se aplica cada cambio del concejo municipal obliga a rastrear y modificar código duplicado en múltiples archivos aumentando drásticamente el riesgo de inconsistencias.
+Situación 3: Integración con el Sistema Estatal de Bibliotecas
+Aplicare el patron Adapter
+Justificación: El dominio local no coincide con las firmas tipos de datos (JSON) ni idioma PushRecord del servicio externo no modificable. Con Adapter se traduce la interfaz requerida por la biblioteca hacia la interfaz del sistema estatal. Si no se aplica el código de nuestro dominio se contaminaría con tipos y formatos de un servicio de terceros que cambia de versión acoplando todo el sistema a dependencias externas.
