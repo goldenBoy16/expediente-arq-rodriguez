@@ -19,7 +19,7 @@ $venta = new Venta("María Flores");
 $prod = new Producto("P-02", "Impresora Térmica", 450.00, 5, 1);
 $venta->agregarDetalle(new DetalleVenta($prod, 1));
 
-// ACOPLAMIENTO DIRECTO: El script conoce y llama una por una a las dependencias[cite: 2]
+// ACOPLAMIENTO DIRECTO: Se conoce y llama una por una a las dependencias
 echo "[SISTEMA] Procesando venta manualmente...\n";
 $auditoria = new AuditoriaObserver();
 $auditoria->actualizar($venta);
@@ -27,4 +27,4 @@ $auditoria->actualizar($venta);
 $inventario = new InventarioObserver();
 $inventario->actualizar($venta);
 
-// Si llega un nuevo interesado (ej: Facturación), hay que modificar este script para llamarlo[cite: 2].
+// Si llega un nuevo interesado (ej: Facturación), hay que modificar este script para llamarlo.

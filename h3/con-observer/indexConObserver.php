@@ -24,9 +24,9 @@ $venta->agregarDetalle(new DetalleVenta($prod, 1));
 
 $sujeto = new VentaSubject();
 
-// Suscripción desacoplada[cite: 1]
+// Suscripción desacoplada
 $sujeto->suscribir(new AuditoriaObserver());
 $sujeto->suscribir(new InventarioObserver());
 
-// Publicación del evento[cite: 1]
+// Publicación del evento
 $sujeto->procesarVenta($venta);
