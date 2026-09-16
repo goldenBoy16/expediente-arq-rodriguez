@@ -18,14 +18,14 @@ class MultaInfantilStrategy implements MultaStrategyInterface {
     }
 }
 
-// Estrategia 2: Socio Adulto (2 Bs por día)
+// Estrategia 2: Socio Adulto (2 Bs por dia)
 class MultaAdultoStrategy implements MultaStrategyInterface {
     public function calcularMulta(int $diasAtraso): float {
         return $diasAtraso * 2.0;
     }
 }
 
-// Estrategia 3: Socio Tercera Edad (1 Bs por día con tope de 20 Bs)
+// Estrategia 3: Socio Tercera Edad (1 Bs por dia con tope de 20 Bs)
 class MultaTerceraEdadStrategy implements MultaStrategyInterface {
     public function calcularMulta(int $diasAtraso): float {
         $calculo = $diasAtraso * 1.0;
@@ -50,7 +50,28 @@ class CalculadorMultaService {
     }
 }
 
+// 3. EJEMPLO DE USO DE LA BIBLIOTECA
 
+echo "===============================================================\n";
+echo " BIBLIOTECA MUNICIPAL - CALCULO DE MULTAS CON PATRON STRATEGY)\n";
+echo "===============================================================\n\n";
+
+echo "Ingrese los dias de atraso del prestamo: ";
+$diasAtraso = (int) trim(fgets(STDIN));
+
+echo "\n--- RESULTADOS CALCULADOS ---\n";
+
+// Prestamo 1: Socio Infantil
+$calculador = new CalculadorMultaService(new MultaInfantilStrategy());
+echo "Socio Infantil ($diasAtraso dias atraso): Bs. " . $calculador->obtenerMonto($diasAtraso) . "\n";
+
+// Prestamo 2: Socio Adulto
+$calculador->setEstrategia(new MultaAdultoStrategy());
+echo "Socio Adulto ($diasAtraso dias atraso): Bs. " . $calculador->obtenerMonto($diasAtraso) . "\n";
+
+// Prestamo 3: Socio Tercera Edad (aplica tope de 20)
+$calculador->setEstrategia(new MultaTerceraEdadStrategy());
+echo "Socio Tercera Edad ($diasAtraso dias atraso): Bs. " . $calculador->obtenerMonto($diasAtraso) . "\n";
 
 
 
