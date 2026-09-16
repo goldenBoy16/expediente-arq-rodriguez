@@ -7,3 +7,5 @@ Justificación: La lógica del cálculo de multas está encapsulada en estructur
 Situación 3: Integración con el Sistema Estatal de Bibliotecas
 Aplicare el patron Adapter
 Justificación: El dominio local no coincide con las firmas tipos de datos (JSON) ni idioma PushRecord del servicio externo no modificable. Con Adapter se traduce la interfaz requerida por la biblioteca hacia la interfaz del sistema estatal. Si no se aplica el código de nuestro dominio se contaminaría con tipos y formatos de un servicio de terceros que cambia de versión acoplando todo el sistema a dependencias externas.
+Conexión SOLID
+La implementación de la Situación 2 mediante el patrón Strategy rescata directamente el principio de Abierto/Cerrado Open/Closed principio - OCP. Se observa claramente en la creación de las clases concretas MultaInfantilStrategy, MultaAdultoStrategy tambien la interfaz MultaStrategyInterface para agregar una nueva regla de multa aprobada por el concejo municipal, basta con crear una nueva clase que implemente la interfaz, sin modificar una sola línea del código consumidor ni alterar las estrategias de cálculo existentes.
