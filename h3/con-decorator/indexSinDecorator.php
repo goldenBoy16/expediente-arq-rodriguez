@@ -4,7 +4,7 @@ require_once __DIR__ . '/VentaBase.php';
 use App\Decorator\VentaBase;
 
 echo "========================================\n";
-echo "      PRUEBA SIN PATRÓN DECORATOR       \n";
+echo "      PRUEBA SIN PATRON DECORATOR       \n";
 echo "========================================\n\n";
 
 $montoBase = 200.00;
