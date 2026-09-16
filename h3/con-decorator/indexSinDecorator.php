@@ -9,9 +9,6 @@ echo "========================================\n\n";
 
 $montoBase = 200.00;
 
-// ACOPLAMIENTO Y BANDERAS MANUALES:
-// Para combinar agregados sin Decorator, se requiere evaluar banderas rígidas 
-// o crear subclases para cada combinación (VentaConEnvio, VentaConEnvioYRegalo, etc.)
 $incluyeEnvio = true;
 $incluyeRegalo = true;
 
