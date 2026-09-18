@@ -6,18 +6,18 @@ graph TD
     classDef system fill:#1168bd,color:#fff,stroke:#0e58a0,stroke-width:2px;
     classDef external fill:#999999,color:#fff,stroke:#666666,stroke-width:2px;
 
-    vendedor["Vendedor<br/>(registra ventas)"]:::actor
-    admin["Administrador<br/>(ajusta stock y precios)"]:::actor
-    cliente["Cliente<br/>(recibe avisos de su compra)"]:::actor
+    vendedor["Vendedor / Cajero<br/>(registra ventas y aplica descuentos)"]:::actor
+    admin["Administrador<br/>(gestiona catálogo de productos)"]:::actor
+    cliente["Cliente<br/>(recibe comprobante y avisos)"]:::actor
 
-    sistema["SISTEMA DE TIENDA CON INVENTARIO<br/>Registra ventas, controla stock<br/>y avisa cuando algo se agota"]:::system
+    sistema["SISTEMA DE VENTAS E INVENTARIO<br/>Procesa ventas con Strategy (descuentos),<br/>Decorator (comprobantes) y Observer (alertas)"]:::system
 
-    correo["Servicio de correo<br/>(externo)"]:::external
-    pasarela["Pasarela de pagos<br/>(externa)"]:::external
+    correo["Servicio de Notificación Mail/SMS<br/>(externo)"]:::external
+    pasarela["Pasarela de Pagos / Adapter Municipal<br/>(externo)"]:::external
 
-    vendedor -->|registra ventas| sistema
-    admin -->|gestiona catálogo y stock| sistema
-    sistema -->|envía comprobantes y avisos| correo
-    correo -->|entrega el aviso| cliente
-    sistema -->|cobra en línea| pasarela
+    vendedor -->|procesa ventas y comprobantes| sistema
+    admin -->|gestiona productos y stock| sistema
+    sistema -->|envía alertas e informes| correo
+    correo -->|entrega notificación| cliente
+    sistema -->|integra reportes/cobros| pasarela
 ```
