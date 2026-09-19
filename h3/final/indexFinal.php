@@ -14,7 +14,7 @@ use App\Final\InventarioObserver;
 use App\Final\VentaService;
 
 echo "========================================\n";
-echo "   SISTEMA DE VENTAS - FUSION H4        \n";
+echo "   SISTEMA DE VENTAS - FUSION H3        \n";
 echo "========================================\n\n";
 
 // 1. Instanciar servicio con estrategia por defecto (Sin Descuento)
