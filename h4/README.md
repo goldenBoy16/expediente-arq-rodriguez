@@ -17,3 +17,29 @@ graph TD
     correo -->|entrega notificación| cliente
     sistema -->|integra reportes/cobros| pasarela
 ```
+
+## Nivel 2
+
+```mermaid
+graph TD    
+    vendedor["Vendedor"]:::actor
+    admin["Administrador"]:::actor
+
+    subgraph sistemaBoundary ["SISTEMA DE VENTAS (PHP)"]
+        cliApp["Interfaz CLI / Scripts PHP<br/>PHP 8.x<br/>Punto de entrada (indexFinal.php)"]:::container
+        coreVentas["Core de Ventas & Dominio<br/>PHP 8.x<br/>Clases Venta, Producto, DetalleVenta"]:::container
+        patronesModule["Módulo de Patrones (h3/)<br/>PHP 8.x<br/>Strategy (Descuentos), Decorator (Comprobantes),<br/>Adapter (Servicio Municipal)"]:::container
+        servicioObserver["Servicio Eventos & Observadores<br/>PHP 8.x<br/>Observer: AuditoriaObserver, InventarioObserver"]:::container
+        db[("Base de Datos / Persistencia<br/>SQL / Archivos<br/>Productos, Ventas, Logs de Auditoría")]:::db
+    end
+
+    correo["Servicio de correo<br/>(externo)"]:::external
+
+    vendedor --> cliApp
+    admin --> cliApp
+    cliApp --> coreVentas
+    coreVentas --> patronesModule
+    coreVentas -->|notifica eventos post-venta| servicioObserver
+    coreVentas --> db
+    servicioObserver -->|envía alertas| correo
+```
