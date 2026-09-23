@@ -1,3 +1,5 @@
+# Parte 1 - diagrama
+## Alexander Carmelo Rodriguez Camacho
 ```mermaid
 classDiagram
     class Portero {
