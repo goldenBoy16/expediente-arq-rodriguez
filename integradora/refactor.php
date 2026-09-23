@@ -1,5 +1,5 @@
 <?php
-// Refactor: Alexander Carmelo Rodriguez Camcaho
+// Refactor: Alexander Carmelo Rodriguez Camacho
 // usare php para la curar el principio de inversion de dependencias mediante inyeccion de dependencia.
 
 namespace Integradora\Parqueo;
