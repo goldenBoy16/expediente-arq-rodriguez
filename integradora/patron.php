@@ -34,3 +34,14 @@ class EstadiaSubject {
         }
     }
 }
+
+echo "========================================\n";
+echo "  PRUEBA DE PATRON OBSERVER (>24 HORAS)\n";
+echo "========================================\n\n";
+
+$estadia = new EstadiaSubject("1234-ABC");
+
+$estadia->agregarObservador(new AlertaPropietarioObserver());
+
+echo "Registrando estadía de 28 horas para la placa 1234-ABC...\n";
+$estadia->incrementarTiempo(28);
