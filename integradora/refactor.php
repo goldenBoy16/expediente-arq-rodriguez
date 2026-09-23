@@ -43,10 +43,13 @@ class GestorDeEstadias {
         $this->baseDeDatos->guardarEstadia($placa, $tipoVehiculo, $horas, $total);
 
         echo "----- TICKET DE SALIDA -----\n";
-        echo "Placa {$placa}: {$horas} h como {$tipoVehiculo}\n";
+        echo "Placa {$placa}\n";
+        echo "Cantidad de horas: {$horas} hrs\n";
+        echo "Vehiculo: {$tipoVehiculo}\n";
+        echo "Tarifa por hora: " . number_format($tarifaPorHora, 2) . " Bs\n";
         echo "TOTAL: " . number_format($total, 2) . " Bs\n";
 
-        $this->notificador->enviar("Salida registrada: {$placa}, {$horas} h, " . number_format($total, 2) . " Bs");
+        $this->notificador->enviar("Salida registrada: {$placa}, {$horas} hrs, {$tipoVehiculo}, " . number_format($total, 2) . " Bs");
     }
 }
 
